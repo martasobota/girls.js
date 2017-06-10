@@ -1,4 +1,4 @@
-let currentNumber = 1
+let currentNumber = 1;
 
 // Slide 1
 function showSlide1() {
@@ -42,6 +42,35 @@ document.querySelector('#pin5').addEventListener('click', showSlide5);
 
 function showNextSlide() {
 	document.querySelector('.show').classList.remove('show');
+	let newNumber = currentNumber + 1;
+	if (newNumber > 5)
+	{
+		newNumber = 1;
+	}
+	document.querySelector( '#slide' + newNumber ).classList.add('show');
+	currentNumber = newNumber;
+
 }
 
 document.querySelector('#next').addEventListener('click', showNextSlide)
+
+function showPreviousSlide() {
+	document.querySelector('.show').classList.remove('show');
+	let newNumber = currentNumber - 1;
+	if (newNumber < 1)
+	{
+		newNumber = 5;
+	}
+	document.querySelector('#slide' + newNumber).classList.add('show');
+	currentNumber = newNumber;
+}
+
+document.querySelector('#prev').addEventListener('click', showPreviousSlide)
+
+function showSlide(newNumber) {
+	document.querySelector('.show').classList.remove('show');
+	document.querySelector( '#slide' + newNumber ).classList.add('show');
+	currentNumber = newNumber;
+}
+
+//  zapisanie aktualnego numeru.
