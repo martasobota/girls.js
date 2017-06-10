@@ -1,3 +1,5 @@
+let currentNumber = 1
+
 // Slide 1
 function showSlide1() {
    document.querySelector('.show').classList.remove('show');
@@ -37,3 +39,9 @@ function showSlide5() {
 }
 
 document.querySelector('#pin5').addEventListener('click', showSlide5);
+
+function showNextSlide() {
+	document.querySelector('.show').classList.remove('show');
+}
+
+document.querySelector('#next').addEventListener('click', showNextSlide)
